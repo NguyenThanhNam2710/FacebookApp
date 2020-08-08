@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +24,9 @@ import com.facebook.share.model.ShareVideoContent;
 import com.facebook.share.widget.ShareDialog;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class FunctionFBActivity extends AppCompatActivity {
@@ -81,6 +84,18 @@ public class FunctionFBActivity extends AppCompatActivity {
                 startActivityForResult(intent, SELECT_IMAGE);
             }
         });
+//        btnShareImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SharePhoto photo = new SharePhoto.Builder()
+//                        .setImageUrl(Uri.parse("https://live.staticflickr.com/3730/8971069758_843645ff6d.jpg"))
+//                        .build();
+//                SharePhotoContent content = new SharePhotoContent.Builder()
+//                        .addPhoto(photo)
+//                        .build();
+//                shareDialog.show(content);
+//            }
+//        });
         btnShareImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
